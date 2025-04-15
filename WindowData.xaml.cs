@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,16 @@ namespace WpfApp1
         public WindowData()
         {
             InitializeComponent();
+        }
+
+        private void btn_ok_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btn_cancel_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
