@@ -7,10 +7,34 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Grid Margin="0,0,0,0">
-        <ListView x:Name="listView" Margin="0,0,0,56">
+        <Menu x:Name="menu" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Click="New_Click" IsEnabled="False"/>
+                <MenuItem Header="Open" Click="Open_Click"/>
+                <MenuItem Header="Save" Click="Save_Click"/>
+                <Separator/>
+                <MenuItem Header="Exit" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="New" Click="NewRecord_Click"/>
+                <MenuItem Header="Remove Selected" Click="RemoveSel_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <ListView x:Name="listView" Margin="0,20,0,20">
+            <ListView.Resources>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                    <Setter Property="Padding" Value="5,0,0,0"/>
+                    <Setter Property="Margin" Value="0,0,0,0"/>
+                </Style>
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                    <Setter Property="Padding" Value="5,0,0,0"/>
+                </Style>
+            </ListView.Resources>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding m_nID}" Width="50"/>
                     <GridViewColumn Header="PESEL" DisplayMemberBinding="{Binding m_strPESEL}" Width="50"/>
                     <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding m_strName}" Width="50"/>
                     <GridViewColumn Header="Drugie imię" DisplayMemberBinding="{Binding m_strAnotherName}" Width="50"/>
