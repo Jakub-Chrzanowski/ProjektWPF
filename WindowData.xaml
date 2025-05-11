@@ -1,32 +1,60 @@
-<Window x:Class="WpfApp1.WindowData"
+<Window x:Class="WpfApp2.WindowData"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="WindowData" Height="489" Width="511">
-    <Grid>
-        <TextBox x:Name="PESEL" HorizontalAlignment="Left" Margin="153,31,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="153,61,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AnotherName" HorizontalAlignment="Left" Margin="153,91,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Surname" HorizontalAlignment="Left" Margin="153,121,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="PhoneNumber" HorizontalAlignment="Left" Margin="153,181,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Adress" HorizontalAlignment="Left" Margin="153,211,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Locality" HorizontalAlignment="Left" Margin="153,241,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ZipCode" HorizontalAlignment="Left" Margin="153,271,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label Content="PESEL*" HorizontalAlignment="Left" Margin="89,26,0,0" VerticalAlignment="Top" Height="25" Width="45" FontSize="10px"/>
-        <Label Content="Imię*" HorizontalAlignment="Left" Margin="89,56,0,0" VerticalAlignment="Top" Height="25" Width="37" FontSize="10px"/>
-        <Label Content="Drugie imię" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top" Height="25" Width="65" FontSize="10px"/>
-        <Label Content="Nazwisko*" HorizontalAlignment="Left" Margin="72,117,0,0" VerticalAlignment="Top" Height="25" Width="62" FontSize="10px"/>
-        <Label Content="Data urodzenia*" HorizontalAlignment="Left" Margin="58,146,0,0" VerticalAlignment="Top" Height="25" Width="90" FontSize="10px"/>
-        <Label Content="Numer telefonu" HorizontalAlignment="Left" Margin="51,176,0,0" VerticalAlignment="Top" Height="25" Width="95" FontSize="10px"/>
-        <Label Content="Adres zamieszkania*" HorizontalAlignment="Left" Margin="37,206,0,0" VerticalAlignment="Top" Height="25" Width="116" FontSize="10px"/>
-        <Label Content="Miejscowość*" HorizontalAlignment="Left" Margin="69,236,0,0" VerticalAlignment="Top" Height="25" Width="77" FontSize="10px"/>
-        <Label Content="Kod pocztowy*" HorizontalAlignment="Left" Margin="63,266,0,0" VerticalAlignment="Top" Height="28" Width="90" FontSize="10px"/>
-        <Button x:Name="btn_cancel" Content="Cancel" Margin="310,323,138,122" Click="btn_cancel_Click"/>
-        <Button x:Name="btn_ok" Content="Ok" Margin="226,323,225,122" Click="btn_ok_Click"/>
-        <DatePicker x:Name="BirthDate" HorizontalAlignment="Left" Margin="153,146,0,0" VerticalAlignment="Top" Height="28" Width="120"/>
+        Title="Dodawanie/Edytowanie uczniów" Height="450" Width="400" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Label Content="PESEL*:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtPESEL" Grid.Row="0" Grid.Column="1" Margin="5" TextChanged="TextBox_TextChanged"/>
+
+        <Label Content="Imię*:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" Margin="5" TextChanged="TextBox_TextChanged"/>
+
+        <Label Content="Drugie imię:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtAnotherName" Grid.Row="2" Grid.Column="1" Margin="5" TextChanged="TextBox_TextChanged"/>
+
+        <Label Content="Nazwisko*:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtSurname" Grid.Row="3" Grid.Column="1" Margin="5" TextChanged="TextBox_TextChanged"/>
+
+        <Label Content="Data urodzenia*:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+        <DatePicker x:Name="dpBirthDate" Grid.Row="4" Grid.Column="1" Margin="5" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+
+        <Label Content="Numer telefonu:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtPhoneNumber" Grid.Row="5" Grid.Column="1" Margin="5" TextChanged="TextBox_TextChanged"/>
+
+        <Label Content="Adres*:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtAddress" Grid.Row="6" Grid.Column="1" Margin="5" TextChanged="TextBox_TextChanged"/>
+
+        <Label Content="Miejscowość*:" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtLocality" Grid.Row="7" Grid.Column="1" Margin="5" TextChanged="TextBox_TextChanged"/>
+
+        <Label Content="Kod pocztowy*:" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtZipCode" Grid.Row="8" Grid.Column="1" Margin="5" TextChanged="TextBox_TextChanged"/>
+
+        <StackPanel Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+            <Button x:Name="btnOk" Content="OK" Width="75" Margin="5" Click="btn_ok_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" Width="75" Margin="5" Click="btn_cancel_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
