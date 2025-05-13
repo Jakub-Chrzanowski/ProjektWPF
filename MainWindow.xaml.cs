@@ -147,7 +147,7 @@ namespace WpfApp2
 
         private void About_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Baza danych uczniów\nWykoane przez: Jakub Chrzanowski 3TP\nWersja: 1.0", "O programie", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Baza danych uczniów\nWykoane przez: Jakub Chrzanowski 3TP", "O programie", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
