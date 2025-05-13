@@ -34,8 +34,8 @@
             </ListView.Resources>
             <ListView.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Edit" Click="Edit_Click"/>
-                    <MenuItem Header="Delete" Click="RemoveSel_Click"/>
+                    <MenuItem Header="Edytuj" Click="Edit_Click"/>
+                    <MenuItem Header="Usun" Click="RemoveSel_Click"/>
                 </ContextMenu>
             </ListView.ContextMenu>
             <ListView.View>
